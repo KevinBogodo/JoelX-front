@@ -365,7 +365,7 @@ main {
   display: flex;
   margin-top: 3rem;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .main-list {
@@ -392,14 +392,16 @@ main {
   cursor: pointer;
   margin: 2px 0;
   padding: 3rem 1rem;
-  flex-direction: row;
   line-height: 2rem;
+  flex-direction: row;
+  transform: scale(0.9);
   transition: all 0.2s ease;
   box-shadow: var(--box-shadow);
   justify-content: space-between;
 }
 
 .main-list .card-services:hover {
+  transform: scale(1);
   box-shadow: var(--box-shadow-2);
 } 
 
@@ -432,3 +434,134 @@ main {
   font-size: 23px;
   font-weight: 600;
 } 
+
+
+/* Design for C-list */
+.bill {
+  width: 50vh;
+  height: 80vh;
+  margin: 2rem;
+  display: flex;
+  padding: 1rem 0;
+  align-items: center;
+  overflow: scroll;
+  flex-direction: column;
+  transition: all 0.2s ease;
+  /* justify-content: center; */
+  background: var(--color-white);
+  box-shadow: var(--box-shadow);
+}
+.bill .list{
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.c-list {
+  
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  cursor: default;
+  margin: 2px 0;
+  padding: 2px 1rem;
+  line-height: 2rem;
+  flex-direction: row;
+  transform: scale(0.9);
+  transition: all 0.2s ease;
+  border-bottom: solid 1px var(--color-primary);
+  justify-content: space-between;
+}
+
+.c-list:hover {
+  transform: scale(1);
+  box-shadow: var(--box-shadow-2);
+} 
+
+
+.main-list .card-services .left {
+  display: flex;
+  flex-direction: column;
+}
+
+.c-list .left h2 {
+  font-weight: 300;
+  font-size: 19px;
+}
+
+.c-list .left h3 {
+  font-size: 13px;
+  margin-top: 12px;
+  font-weight: 300;
+}
+
+.c-list .right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.c-list .right img {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  margin-right: 1rem;
+} 
+
+
+
+/*  Quick Add customers */
+.quick-add {
+  background: transparent;
+  border: 1px dashed var(--color-primary);
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: scale(0.9);
+  transition: all 0.2s ease;
+  margin: 1rem 0;
+  padding: 1rem;
+  box-shadow: var(--box-shadow);
+  /* border-radius: var(--border-radius-2); */
+}
+.quick-add:hover{
+  
+  transform: scale(1);
+}
+.quick-add div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.quick-add div h3 {
+  font-weight: 600;
+}
+
+/* Quick search */
+.quick-search {
+  background: transparent;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.quick-search:hover{
+  transform: scale(1);
+}
+.quick-search input {
+  font-weight: 600;
+  width: 100%;
+  height: 3rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  transform: scale(0.9);
+  transition: all 0.2s ease;
+  font-size: 16px;
+  font-weight: 300;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius-2);
+  border: 1px dashed var(--color-primary);
+}
