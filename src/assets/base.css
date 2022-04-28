@@ -40,6 +40,7 @@
   /* box shadow */
   --box-shadow: 0 2rem 3rem var(--color-light);
   --box-shadow-1: 0 3rem 3rem var(--color-light);
+  --box-shadow-2: 0 2px 1px 0 rgba(3, 38, 135, 0.37);
   --box-shadow-2: 0 8px 32px 0 rgba(3, 38, 135, 0.37);
 }
 
@@ -51,6 +52,28 @@
   --color-dark-variant: #ffffff;
   --color-light: rgba(0, 0, 0, 0.4);
   --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  border-radius: var(--border-radius-3);
+  height: 1em;
+}
+
+/* ::-webkit-scrollbar-track {
+  background: var(--color-primary);
+} */
+
+::-webkit-scrollbar-thumb {
+  background: var(--grad-primary);
+  border-radius: 10px;
+  height: 5px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--grad-primary);
+  cursor: pointer;
 }
 
 
@@ -338,6 +361,13 @@ main {
   width: 100%;
 }
 
+.main-services {
+  display: flex;
+  margin-top: 3rem;
+  align-items: center;
+  flex-direction: column;
+}
+
 .main-list {
   width: 50vh;
   height: 80vh;
@@ -350,9 +380,55 @@ main {
   transition: all 0.2s ease;
   /* justify-content: center; */
   background: var(--color-white);
-  box-shadow: var(--box-shadow-2);
-}
-
-.main-list:hover {
   box-shadow: var(--box-shadow);
 }
+
+
+.main-list .card-services {
+  
+  width: 100%;
+  height: auto;
+  display: flex;
+  cursor: pointer;
+  margin: 2px 0;
+  padding: 3rem 1rem;
+  flex-direction: row;
+  line-height: 2rem;
+  transition: all 0.2s ease;
+  box-shadow: var(--box-shadow);
+  justify-content: space-between;
+}
+
+.main-list .card-services:hover {
+  box-shadow: var(--box-shadow-2);
+} 
+
+
+.main-list .card-services .left {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-list .card-services .left h2 {
+  font-weight: 300;
+  font-size: 19px;
+}
+
+.main-list .card-services .left h3 {
+  font-size: 13px;
+  margin-top: 12px;
+  font-weight: 300;
+}
+
+.main-list .card-services .right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+}
+
+.main-list .card-services .right h2 {
+  font-size: 23px;
+  font-weight: 600;
+} 
