@@ -4,12 +4,13 @@ import Login from '/src/View/Login.vue'
 import Home from '/src/View/Home.vue'
 import NotFound from '/src/View/NotFound.vue'
 import Customers from '/src/View/Customers.vue'
+import Profile from '/src/View/Customers.vue'
 
 
 const routes= [
     {
         name: 'Login',
-        path: '/Login',
+        path: '/',
         component: Login,
         meta: {
             title: 'Login',
@@ -17,7 +18,7 @@ const routes= [
     },
     {
         name: 'Home',
-        path: '/',
+        path: '/home',
         component: Home,
         meta: {
             title: 'Acceuil',
@@ -40,8 +41,16 @@ const routes= [
         meta: {
             title: '404 Not Found',
         }
+    },
+    {
+        name: 'Profile',
+        path: '/Profile',
+        component: Profile,
+        meta: {
+            title: 'Profile',
+            header: 1,
+        }
     }
-
 ];
 
 const router = createRouter({

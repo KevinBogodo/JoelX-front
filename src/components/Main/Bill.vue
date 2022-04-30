@@ -9,23 +9,7 @@
             <CardBill />
             <CardBill />
             <CardBill />
-            <CardBill />
-            <CardBill />
-            <CardBill />
-            <CardBill />
-            <CardBill />
-            <CardBill />
-            <CardBill />
-            <CardBill />
-            <CardBill />
-            <CardBill />
-            <CardBill />
-            <CardBill />
-            <CardBill />
-            <CardBill />
-            <CardBill />
-            <CardBill />
-            <CardBill />
+       
         </div>
     </div>
 </template>
