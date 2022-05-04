@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import router from './router'
+import store from './store'
 import App from './App.vue'
 
 // Aside
@@ -47,5 +48,6 @@ app.component('MainList', MainList)
 app.component('CardBill', CardBill)
 app.component('CardServices', CardServices)
 
+app.use(store)
 app.use(router)
 app.mount('#app')
