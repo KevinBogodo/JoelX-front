@@ -33,9 +33,13 @@
                             <!-- <input v-if="mode == 'create'"  class="inp-sphinx" type="password" placeholder="Confirm Pasword" required 
                             name="confirm-password" autocomplete=" confirm-password"> -->
 
-                           
+                                <p v-if="mode == 'login' && status == 'error_login' " class="danger">
+                                    Incorect Email or password.
+                                </p>
+
                                 <button @click="login()" v-if="mode == 'login'" :class="{'button-disabled' : !validatedFields}" class="button-sphinx" type="button">
-                                    Log in
+                                   <span v-if="status == 'loading'" >In progress...</span>
+                                   <span v-else>Log in</span> 
                                 </button>
                           
                                 <button @click="createAccount()" v-else :class="{'button-disabled' : !validatedFields}" class="button-sphinx" type="button">
@@ -53,6 +57,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
     export default {
 
         data() {
@@ -83,7 +88,9 @@
                     }
                 }
 
-            }
+
+            },
+            ...mapState(['status'])
         },
         methods: {
             switchToCreateAccount: function() {
@@ -93,11 +100,12 @@
                 this.mode = 'login';
             },
             login: function () {
+                const self = this;
                  this.$store.dispatch('login',{
                    email: this.email,
                    password: this.password,
-                }).then(function (response){
-                    console.log(response);
+                }).then(function (){
+                    self.$router.push('/home')
                }, function (error) {
                     console.log(error);
                })
