@@ -16,7 +16,6 @@
 
 
 <script>
-import axios from 'axios'
 export default {
     date() {
         return{
@@ -24,12 +23,7 @@ export default {
         }
     },
     mounted() {
-        axios
-        .get('http://joelx.test/api/auth/services')
-        .then((response) =>{
-            this.dat = response;
-            console.log(this.dat)
-        });
+      
     }
 }
 
