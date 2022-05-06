@@ -35,8 +35,8 @@ const store = createStore({
         status: '',
         user: user,
         userInfos: {
-            nom: '',
-            prenom: '',
+            name: '',
+            surname: '',
             email: ''
         },
     },
@@ -56,6 +56,13 @@ const store = createStore({
             state.userInfos = userInfos;
             // console.log(user.token);
         },
+        logout(state) {
+            state.user = {
+                userId: -1,
+                token: '',
+            }
+            localStorage.removeItem('user');
+        }
     },
     actions: {
         login: ({commit}, userInfos) => {

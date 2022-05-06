@@ -3,12 +3,12 @@
                    
                     <div class="profile">
                         <div class="info">
-                            <p><b>Kevin BG</b></p>
+                            <p> {{user.surname}} <b> {{user.name}} </b> | {{user.email}} </p>
                         </div>
                         <div class="profile-img">
                             <img src="" alt="">
                         </div>
-                        <div class="profile-img">
+                        <div @click="logout" class="profile-img">
                             <img src="" alt="">
                         </div>
                     </div>
@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
     name: 'Profile',
     mounted: function () {
@@ -26,7 +27,18 @@ export default {
             return;
         }
         this.$store.dispatch('getUserInfos');
+    },
+    computed: {
+        ...mapState({
+            user: 'userInfos',
+        })
+    },
+    methods: {
+        logout() {
+            this.$store.commit('logout');
+            this.$router.push('/');
+        }
     }
 }
-
+ 
 </script>
