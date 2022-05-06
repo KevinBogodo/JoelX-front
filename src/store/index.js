@@ -46,6 +46,7 @@ const store = createStore({
             });
         },
         createAccount: ({commit}, userInfos) => {
+            commit('setStatus', 'loading');
             return new Promise((resolve, reject)=> {
                 commit;
                 // call for instance axios and pass userInfos as params

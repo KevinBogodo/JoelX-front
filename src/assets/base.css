@@ -373,6 +373,38 @@ aside .sidebar .message-count {
 main {
   width: 100%;
 }
+/*  User design */
+
+.home-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.head {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 2rem;
+}
+
+.head .profile {
+  display: flex;
+  gap: 0.5rem;
+  text-align: right;
+  align-items: center;
+  cursor: pointer;
+}
+
+.head .profile-img {
+  background: var(--grad-primary-1);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+/* Main design */
 
 .main-services {
   display: flex;

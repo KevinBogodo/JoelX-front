@@ -10,10 +10,12 @@ import Menu from '/src/components/Aside/Menu.vue'
 
 // Main
 import Main from '/src/components/Main/Main.vue'
+import Headers from '/src/components/Main/Header.vue'
 import MainList from '/src/components/Main/MainList.vue'
 import CardBill from '/src/components/Main/CardBill.vue'
 import Bill from '/src/components/Main/Bill.vue'
 import CardServices from '/src/components/Main/CardServices.vue'
+import User from '/src/components/Main/User.vue'
 
 // Customers
 import CustomersList from '/src/components/Customers/CustomersList.vue'
@@ -43,9 +45,10 @@ app.component('AddC', AddC)
 app.component('SearchC', SearchC)
 app.component('CustomersList', CustomersList)
 app.component('CardCustomers', CardCustomers)
-
+app.component('Headers', Headers)
 app.component('MainList', MainList)
 app.component('CardBill', CardBill)
+app.component('User', User)
 app.component('CardServices', CardServices)
 
 app.use(store)

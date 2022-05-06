@@ -36,6 +36,9 @@
                                 <p v-if="mode == 'login' && status == 'error_login' " class="danger">
                                     Incorect Email or password.
                                 </p>
+                                <p v-if="mode == 'create' && status == 'error_create' " class="danger">
+                                    Incorect Email or password.
+                                </p>
 
                                 <button @click="login()" v-if="mode == 'login'" :class="{'button-disabled' : !validatedFields}" class="button-sphinx" type="button">
                                    <span v-if="status == 'loading'" >In progress...</span>
@@ -43,7 +46,9 @@
                                 </button>
                           
                                 <button @click="createAccount()" v-else :class="{'button-disabled' : !validatedFields}" class="button-sphinx" type="button">
-                                    create account
+                                    
+                                     <span v-if="status == 'loading'" >In progress...</span>
+                                   <span v-else>create account</span>
                                 </button>
                            
                         </form>
@@ -111,6 +116,7 @@ import { mapState } from "vuex";
                })
             },
             createAccount: function() {
+                const self = this;
                this.$store.dispatch('createAccount',{
                    email: this.email,
                    name: this.name,
@@ -119,7 +125,7 @@ import { mapState } from "vuex";
                    phone: this.phone,
                    password: this.password,
                }).then(function (response){
-                    console.log(response);
+                    self.login();
                }, function (error) {
                     console.log(error);
                })
