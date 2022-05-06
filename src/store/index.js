@@ -8,13 +8,26 @@ const instance = axios.create({
     baseURL: 'http://joelx.test/api/auth/'
 });
 
-// Create user for save in reload
+// Create user in local storage for reload
 let user = localStorage.getItem('user');
 if(!user) {
+//    If not definet set default
     user = {
         userId: -1,
         token: '',
     };
+} else {
+    // if define try to set value
+    try {
+        user = JSON.parse(user);
+        instance.defaults.headers.common['Authorization'] = 'Bearer '+ user.token;
+    } catch (ex) {
+    //  in case of error set to not user
+        user = {
+            userId: -1,
+            token: '',    
+        };
+    }
 }
 // create Store 
 const store = createStore({
@@ -35,13 +48,13 @@ const store = createStore({
         // mutation login user
         logUser(state, user) {
             instance.defaults.headers.common['Authorization'] = 'Bearer '+ user.token;
-            localStorage.setItem('user', user);
+            localStorage.setItem('user', JSON.stringify(user));
             state.user = user;
         },
         // mut for user Infos
         userInfos(state, userInfos) {
             state.userInfos = userInfos;
-            console.log(user.token);
+            // console.log(user.token);
         },
     },
     actions: {
